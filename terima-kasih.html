@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Terima Kasih</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f7f3ee,
+                    #eee7df
+                );
+
+            color: #333;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px 12px;
+        }
+
+
+        /* =========================
+           KAD
+           ========================= */
+
+        .thank-you-card {
+
+            width: 100%;
+
+            max-width: 550px;
+
+            background: white;
+
+            border-radius: 22px;
+
+            padding: 45px 30px;
+
+            text-align: center;
+
+            box-shadow:
+                0 12px 40px
+                rgba(0,0,0,0.12);
+        }
+
+
+        /* =========================
+           IKON
+           ========================= */
+
+        .icon {
+
+            width: 85px;
+
+            height: 85px;
+
+            margin: 0 auto 20px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #333,
+                    #666
+                );
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 42px;
+
+            box-shadow:
+                0 8px 20px
+                rgba(0,0,0,0.15);
+        }
+
+
+        /* =========================
+           TAJUK
+           ========================= */
+
+        h1 {
+
+            margin: 0;
+
+            font-size: 29px;
+
+            color: #222;
+        }
+
+
+        /* =========================
+           TEKS
+           ========================= */
+
+        p {
+
+            margin:
+
+                15px auto 0;
+
+            max-width: 430px;
+
+            line-height: 1.7;
+
+            color: #666;
+
+            font-size: 15px;
+        }
+
+
+        .instruction {
+
+            margin-top: 25px;
+
+            color: #333;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           BUTANG SELESAI
+           ========================= */
+
+        .finish-button {
+
+            display: block;
+
+            width: 100%;
+
+            max-width: 350px;
+
+            margin: 30px auto 0;
+
+            padding: 16px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #222,
+                    #444
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 11px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 6px 18px
+                rgba(0,0,0,0.18);
+
+            transition: 0.2s;
+        }
+
+
+        .finish-button:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 8px 22px
+                rgba(0,0,0,0.23);
+        }
+
+
+        .finish-button:active {
+
+            transform:
+                translateY(1px);
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        .footer {
+
+            margin-top: 22px;
+
+            font-size: 12px;
+
+            color: #999;
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+
+                padding: 12px 8px;
+            }
+
+            .thank-you-card {
+
+                padding: 40px 20px;
+
+                border-radius: 18px;
+            }
+
+            .icon {
+
+                width: 75px;
+
+                height: 75px;
+
+                font-size: 36px;
+            }
+
+            h1 {
+
+                font-size: 25px;
+            }
+
+            p {
+
+                font-size: 14px;
+            }
+
+            .finish-button {
+
+                font-size: 16px;
+
+                padding: 16px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="thank-you-card">
+
+
+    <!-- IKON -->
+
+    <div class="icon">
+
+        ✓
+
+    </div>
+
+
+    <!-- TAJUK -->
+
+    <h1>
+
+        Terima Kasih!
+
+    </h1>
+
+
+    <!-- PENERANGAN -->
+
+    <p>
+
+        Terima kasih kerana meluangkan
+        masa untuk menjawab soal selidik
+        ini.
+
+    </p>
+
+
+    <p class="instruction">
+
+        Jawapan anda telah dihantar.
+
+    </p>
+
+
+    <p>
+
+        Tekan butang <b>Selesai</b>
+        untuk meneruskan ke kad jemputan.
+
+    </p>
+
+
+    <!--
+        ===================================
+        BUTANG SELESAI
+        ===================================
+
+        TUKARKAN LINK DI BAWAH
+        KEPADA LINK KAD JEMPUTAN ANDA.
+    -->
+
+    <a
+        href="https://LINK-KAD-JEMPUTAN-ANDA"
+        class="finish-button">
+
+        💌 Selesai
+
+    </a>
+
+
+    <div class="footer">
+
+        Terima kasih atas penyertaan anda.
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

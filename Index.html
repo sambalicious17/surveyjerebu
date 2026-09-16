@@ -1,0 +1,1119 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Soal Selidik</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        /* =====================================
+           LATAR BELAKANG KESELURUHAN
+           ===================================== */
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.35),
+                    rgba(0, 0, 0, 0.35)
+                ),
+                url("https://imgs.search.brave.com/hrtQ0czbDVG3G99kSKG5RmHRPYP9YxWo1lJ_qoGpP3U/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvc29m/dC1ncmVlbi1saWdo/dC1yYXlzLWJhY2tn/cm91bmQtZXR3eTNn/emFhN24yZDY4Yi5q/cGc");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+            min-height: 100vh;
+
+            padding: 20px 12px;
+        }
+
+
+        /* =====================================
+           KAD FORM
+           ===================================== */
+
+        .survey-container {
+
+            width: 100%;
+
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 10px 35px
+                rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* =====================================
+           HEADER FORM
+           ===================================== */
+
+        .header {
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.35),
+                    rgba(0, 0, 0, 0.35)
+                ),
+                url("https://imgs.search.brave.com/R5djnnCWQj3lbyNnUTBJwbSrDzxljoeY9rQA4LJ2M6w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wbmcu/cG5ndHJlZS5jb20v/dGh1bWJfYmFjay9m/aDI2MC9iYWNrZ3Jv/dW5kLzIwMjUwMjA1/L3BuZ3RyZWUtYmx1/ZS1oZWxpdW0tYmFs/bG9vbnMtb24tYmFj/a2dyb3VuZC13aXRo/LWNvcHktc3BhY2Ut/ZGVjb3JhdGlvbi1m/b3ItYS1pbWFnZV8x/Njg5ODQzMC5qcGc");
+
+            background-size: cover;
+
+            background-position: center;
+
+            min-height: 230px;
+
+            padding: 40px 25px;
+
+            color: white;
+
+            text-align: center;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        .header h1 {
+
+            margin: 0;
+
+            font-size: 30px;
+
+            text-shadow:
+                0 2px 5px
+                rgba(0,0,0,0.5);
+        }
+
+
+        .header p {
+
+            margin: 12px auto 0;
+
+            max-width: 500px;
+
+            line-height: 1.6;
+
+            font-size: 15px;
+
+            text-shadow:
+                0 1px 4px
+                rgba(0,0,0,0.5);
+        }
+
+
+        /* =====================================
+           BORANG
+           ===================================== */
+
+        form {
+
+            padding: 25px;
+        }
+
+
+        /* =====================================
+           SOALAN
+           ===================================== */
+
+        .question {
+
+            margin-bottom: 25px;
+        }
+
+
+        .question-title {
+
+            display: block;
+
+            font-weight: bold;
+
+            font-size: 16px;
+
+            margin-bottom: 10px;
+
+            color: #222;
+
+            line-height: 1.5;
+        }
+
+
+        .required {
+
+            color: #d33;
+        }
+
+
+        /* =====================================
+           INPUT
+           ===================================== */
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+
+            width: 100%;
+
+            padding: 14px 15px;
+
+            border: 1px solid #d5d5d5;
+
+            border-radius: 10px;
+
+            font-size: 16px;
+
+            font-family: inherit;
+
+            background: #fafafa;
+
+            outline: none;
+
+            transition: 0.2s;
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            border-color: #555;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(0,0,0,0.06);
+        }
+
+
+        textarea {
+
+            min-height: 120px;
+
+            resize: vertical;
+        }
+
+
+        /* =====================================
+           PILIHAN
+           ===================================== */
+
+        .option {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 13px 14px;
+
+            margin-bottom: 9px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 10px;
+
+            background: #fafafa;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        .option:hover {
+
+            background: #f0f0f0;
+        }
+
+
+        .option input {
+
+            width: 19px;
+
+            height: 19px;
+
+            accent-color: #333;
+
+            flex-shrink: 0;
+        }
+
+
+        .option label {
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            line-height: 1.4;
+        }
+
+
+        /* =====================================
+           BUTANG
+           ===================================== */
+
+        .submit-button {
+
+            width: 100%;
+
+            padding: 16px;
+
+            border: none;
+
+            border-radius: 11px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #222,
+                    #444
+                );
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+            box-shadow:
+                0 5px 15px
+                rgba(0,0,0,0.15);
+        }
+
+
+        .submit-button:hover {
+
+            transform:
+                translateY(-1px);
+
+            box-shadow:
+                0 7px 18px
+                rgba(0,0,0,0.2);
+        }
+
+
+        /* =====================================
+           NOTA
+           ===================================== */
+
+        .note {
+
+            text-align: center;
+
+            font-size: 13px;
+
+            color: #777;
+
+            margin-top: 15px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =====================================
+           PAPARAN TELEFON
+           ===================================== */
+
+        @media (max-width: 600px) {
+
+            body {
+
+                padding: 8px;
+            }
+
+
+            .survey-container {
+
+                border-radius: 16px;
+            }
+
+
+            .header {
+
+                min-height: 200px;
+
+                padding: 30px 20px;
+            }
+
+
+            .header h1 {
+
+                font-size: 24px;
+            }
+
+
+            .header p {
+
+                font-size: 14px;
+            }
+
+
+            form {
+
+                padding: 20px 16px;
+            }
+
+
+            .question-title {
+
+                font-size: 15px;
+            }
+
+
+            input[type="text"],
+            input[type="number"],
+            select,
+            textarea {
+
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="survey-container">
+
+
+    <!-- =================================
+         HEADER
+         ================================= -->
+
+    <div class="header">
+
+        <h1>
+            Soal Selidik
+        </h1>
+
+        <p>
+            Sila luangkan sedikit masa untuk
+            menjawab soal selidik ini.
+            Pandangan anda amat dihargai.
+        </p>
+
+    </div>
+
+
+    <!-- =================================
+         BORANG
+         ================================= -->
+
+    <form id="surveyForm">
+
+
+        <!-- =================================
+             SOALAN 1
+             ================================= -->
+
+        <div class="question">
+
+            <label class="question-title">
+
+                1. Nama
+                <span class="required">*</span>
+
+            </label>
+
+            <input
+                type="text"
+                name="nama"
+                placeholder="Masukkan nama anda"
+                required>
+
+        </div>
+
+
+        <!-- =================================
+             SOALAN 2
+             ================================= -->
+
+        <div class="question">
+
+            <label class="question-title">
+
+                2. Umur
+                <span class="required">*</span>
+
+            </label>
+
+            <input
+                type="number"
+                name="umur"
+                min="1"
+                max="120"
+                placeholder="Contoh: 25"
+                required>
+
+        </div>
+
+
+        <!-- =================================
+             SOALAN 3
+             ================================= -->
+
+        <div class="question">
+
+            <label class="question-title">
+
+                3. Pekerjaan
+                <span class="required">*</span>
+
+            </label>
+
+            <input
+                type="text"
+                name="pekerjaan"
+                placeholder="Contoh: Guru / Juruteknik / Pelajar"
+                required>
+
+        </div>
+
+
+        <!-- =================================
+             SOALAN 4
+             ================================= -->
+
+        <div class="question">
+
+            <label class="question-title">
+
+                4. Jantina
+                <span class="required">*</span>
+
+            </label>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    id="lelaki"
+                    name="jantina"
+                    value="Lelaki"
+                    required>
+
+                <label for="lelaki">
+                    Lelaki
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    id="perempuan"
+                    name="jantina"
+                    value="Perempuan">
+
+                <label for="perempuan">
+                    Perempuan
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             SOALAN 5
+             ================================= -->
+
+        <div class="question">
+
+            <label class="question-title">
+
+                5. Sejauh manakah masalah jerebu
+                memberi kesan kepada kehidupan
+                harian anda?
+
+                <span class="required">*</span>
+
+            </label>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="kesan_jerebu"
+                    value="Tiada kesan"
+                    required>
+
+                <label>
+                    Tiada kesan
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="kesan_jerebu"
+                    value="Kesan sedikit">
+
+                <label>
+                    Kesan sedikit
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="kesan_jerebu"
+                    value="Kesan sederhana">
+
+                <label>
+                    Kesan sederhana
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="kesan_jerebu"
+                    value="Kesan besar">
+
+                <label>
+                    Kesan besar
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="kesan_jerebu"
+                    value="Kesan sangat besar">
+
+                <label>
+                    Kesan sangat besar
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             SOALAN 6
+             ================================= -->
+
+        <div class="question">
+
+            <label class="question-title">
+
+                6. Pada pendapat anda, sejauh manakah
+                aktiviti pembakaran terbuka menyumbang
+                kepada masalah jerebu di kawasan anda?
+
+                <span class="required">*</span>
+
+            </label>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="pembakaran_jerebu"
+                    value="Tidak menyumbang"
+                    required>
+
+                <label>
+                    Tidak menyumbang
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="pembakaran_jerebu"
+                    value="Kurang menyumbang">
+
+                <label>
+                    Kurang menyumbang
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="pembakaran_jerebu"
+                    value="Sederhana">
+
+                <label>
+                    Sederhana
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="pembakaran_jerebu"
+                    value="Banyak menyumbang">
+
+                <label>
+                    Banyak menyumbang
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="pembakaran_jerebu"
+                    value="Sangat banyak menyumbang">
+
+                <label>
+                    Sangat banyak menyumbang
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="pembakaran_jerebu"
+                    value="Tidak pasti">
+
+                <label>
+                    Tidak pasti
+                </label>
+
+            </div>
+
+        </div>
+
+        <!-- =================================
+             SOALAN 7
+             ================================= -->
+
+        <div class="question">
+
+            <label class="question-title">
+
+                7. Sejauh manakah jerebu menjejaskan
+                keselesaan anda melakukan aktiviti
+                di luar rumah?
+
+                <span class="required">*</span>
+
+            </label>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="aktiviti_luar"
+                    value="Tiada kesan"
+                    required>
+
+                <label>
+                    Tiada kesan
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="aktiviti_luar"
+                    value="Kesan sedikit">
+
+                <label>
+                    Kesan sedikit
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="aktiviti_luar"
+                    value="Kesan sederhana">
+
+                <label>
+                    Kesan sederhana
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="aktiviti_luar"
+                    value="Kesan besar">
+
+                <label>
+                    Kesan besar
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="aktiviti_luar"
+                    value="Kesan sangat besar">
+
+                <label>
+                    Kesan sangat besar
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             SOALAN 8
+             ================================= -->
+
+        <div class="question">
+
+            <label class="question-title">
+
+                8. Pada pendapat anda, apakah punca
+                utama berlakunya pembakaran terbuka
+                di kawasan anda?
+
+                <span class="required">*</span>
+
+            </label>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="punca_pembakaran"
+                    value="Pembakaran sampah"
+                    required>
+
+                <label>
+                    Pembakaran sampah
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="punca_pembakaran"
+                    value="Pembakaran sisa pertanian">
+
+                <label>
+                    Pembakaran sisa pertanian
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="punca_pembakaran"
+                    value="Pembakaran daun atau ranting">
+
+                <label>
+                    Pembakaran daun / ranting
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="punca_pembakaran"
+                    value="Pembakaran hutan atau tanah">
+
+                <label>
+                    Pembakaran hutan / tanah
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="punca_pembakaran"
+                    value="Aktiviti lain">
+
+                <label>
+                    Aktiviti lain
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="punca_pembakaran"
+                    value="Tidak pasti">
+
+                <label>
+                    Tidak pasti
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             SOALAN 9
+             ================================= -->
+
+        <div class="question">
+
+            <label class="question-title">
+
+                9. Adakah anda bersedia untuk memainkan
+                peranan dalam membantu mengurangkan
+                masalah jerebu dan pembakaran terbuka?
+
+                <span class="required">*</span>
+
+            </label>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="kesediaan"
+                    value="Ya, sangat bersedia"
+                    required>
+
+                <label>
+                    Ya, sangat bersedia
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="kesediaan"
+                    value="Ya, bersedia">
+
+                <label>
+                    Ya, bersedia
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="kesediaan"
+                    value="Kurang bersedia">
+
+                <label>
+                    Kurang bersedia
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="kesediaan"
+                    value="Tidak bersedia">
+
+                <label>
+                    Tidak bersedia
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    name="kesediaan"
+                    value="Tidak pasti">
+
+                <label>
+                    Tidak pasti
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             SOALAN 10
+             ================================= -->
+
+        <div class="question">
+
+            <label class="question-title">
+
+                10. Apakah cadangan anda untuk
+                mengurangkan masalah jerebu dan
+                aktiviti pembakaran terbuka?
+
+            </label>
+
+
+            <textarea
+                name="komen"
+                placeholder="Sila tuliskan komen atau cadangan anda..."></textarea>
+
+        </div>
+
+
+
+        <!-- =================================
+             SUBMIT
+             ================================= -->
+
+        <button
+            type="submit"
+            class="submit-button">
+
+            Hantar Jawapan
+
+        </button>
+
+
+        <div class="note">
+
+            <span class="required">*</span>
+            Sila lengkapkan semua soalan
+            yang bertanda.
+
+        </div>
+
+
+    </form>
+
+</div>
+
+
+<script>
+
+    /*
+     * Selepas borang dihantar,
+     * pengguna dibawa ke halaman
+     * terima-kasih.html
+     */
+
+    document
+        .getElementById("surveyForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            window.location.href =
+                "terima-kasih.html";
+
+        });
+
+</script>
+
+
+</body>
+
+</html>
